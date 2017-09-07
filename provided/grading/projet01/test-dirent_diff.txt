@@ -1,0 +1,55 @@
+STDOUT
+  **********FS SUPERBLOCK START**********
+  s_isize             : 64  
+  s_fsize             : 4096
+  s_fbmsize           : 0   
+  s_ibmsize           : 0   
+  s_inode_start       : 2   
+  s_block_start       : 66  
+  s_fbm_start         : 0   
+  s_ibm_start         : 0   
+  s_flock             : 0   
+  s_ilock             : 0   
+  s_fmod              : 0   
+  s_ronly             : 0   
+  s_time              : [0] 0
+  **********FS SUPERBLOCK END**********
+  TEST_BEGIN
+  direntv6_opendir_null_directory_reader: PASS
+  direntv6_opendir_null_filesystem: PASS
+  direntv6_opendir_illegal_inr: FAIL
+  direntv6_opendir_too_high_inr: FAIL
+  direntv6_opendir_open_file: PASS
+  direntv6_opendir_open_directory: PASS
+  direntv6_opendir_correct_file_open: PASS
+  direntv6_readdir_null_directory_reader: PASS
+  direntv6_readdir_null_name: PASS
+  direntv6_readdir_null_inode_number: PASS
+  Start directory read test
+  inr 2, name 'books'
+  End directory read test
+  direntv6_read_all_directories: PASS
+  TEST_END
+  DIR /
+  DIR /books/
+  DIR /books/aiw/
+  DIR /books/aiw/by_chapters/
+  FIL /books/aiw/by_chapters/00-licence.txt
+  FIL /books/aiw/by_chapters/11-0-beg.txt
+  FIL /books/aiw/by_chapters/11-0-c01.txt
+  FIL /books/aiw/by_chapters/11-0-c02.txt
+  FIL /books/aiw/by_chapters/11-0-c03.txt
+  FIL /books/aiw/by_chapters/11-0-c04.txt
+  FIL /books/aiw/by_chapters/11-0-c05.txt
+  FIL /books/aiw/by_chapters/11-0-c06.txt
+  FIL /books/aiw/by_chapters/11-0-c07.txt
+  FIL /books/aiw/by_chapters/11-0-c08.txt
+  FIL /books/aiw/by_chapters/11-0-c09.txt
+  FIL /books/aiw/by_chapters/11-0-c10.txt
+  FIL /books/aiw/by_chapters/11-0-c11.txt
+  FIL /books/aiw/by_chapters/11-0-c12.txt
+  FIL /books/aiw/by_chapters/11-0-end.txt
+  DIR /books/aiw/full/
+  FIL /books/aiw/full/11-0.txt
+
+STDERR

@@ -1,0 +1,763 @@
+Submission accepted
+
+stdout:
+making (our) test-inodes: 
+cc -std=c99 -Wall -pedantic  -g   -c -o test-inodes.o test-inodes.c
+cc -std=c99 -Wall -pedantic  -g   -c -o test-core.o test-core.c
+cc -std=c99 -Wall -pedantic  -g   -c -o error.o error.c
+cc -std=c99 -Wall -pedantic  -g   -c -o mount.o mount.c
+cc -std=c99 -Wall -pedantic  -g   -c -o inode.o inode.c
+cc -std=c99 -Wall -pedantic  -g   -c -o sector.o sector.c
+cc -std=c99 -Wall -pedantic  -g   -c -o filev6.o filev6.c
+cc -std=c99 -Wall -pedantic  -g   -c -o bmblock.o bmblock.c
+cc   test-inodes.o test-core.o error.o mount.o inode.o sector.o filev6.o bmblock.o  -lcrypto -o test-inodes
+test-inodes done.
+making (our) test-file: 
+cc -std=c99 -Wall -pedantic  -g   -c -o test-file.o test-file.c
+cc -std=c99 -Wall -pedantic  -g   -c -o sha.o sha.c
+cc   test-file.o test-core.o error.o mount.o inode.o filev6.o sha.o sector.o bmblock.o  -lcrypto -o test-file
+test-file done.
+making (our) test-dirent: 
+cc -std=c99 -Wall -pedantic  -g   -c -o test-dirent.o test-dirent.c
+cc -std=c99 -Wall -pedantic  -g   -c -o direntv6.o direntv6.c
+cc   test-dirent.o test-core.o error.o mount.o inode.o filev6.o direntv6.o sector.o bmblock.o  -lcrypto -o test-dirent
+test-dirent done.
+making (our) test-bitmap: 
+cc -std=c99 -Wall -pedantic  -g    test-bitmap.c  -lcrypto -o test-bitmap
+<builtin>: recipe for target 'test-bitmap' failed
+make failed.
+=====
+testing our test-inodes on disk simple.uv6: done.
+diff from reference:
+0							      <
+**********FS SUPERBLOCK START**********				**********FS SUPERBLOCK START**********
+s_isize             : 32  					s_isize             : 32
+s_fsize             : 1024					s_fsize             : 1024
+s_fbmsize           : 0   					s_fbmsize           : 0
+s_ibmsize           : 0   					s_ibmsize           : 0
+s_inode_start       : 2   					s_inode_start       : 2
+s_block_start       : 34  					s_block_start       : 34
+s_fbm_start         : 0   					s_fbm_start         : 0
+s_ibm_start         : 0   					s_ibm_start         : 0
+s_flock             : 0   					s_flock             : 0
+s_ilock             : 0   					s_ilock             : 0
+s_fmod              : 0   					s_fmod              : 0
+s_ronly             : 0   					s_ronly             : 0
+s_time              : [0] 0					s_time              : [0] 0
+**********FS SUPERBLOCK END**********				**********FS SUPERBLOCK END**********
+inode   1 (DIR) len   16					inode   1 (DIR) len   16
+inode   2 (DIR) len   16					inode   2 (DIR) len   16
+inode   3 (FIL) len   18					inode   3 (FIL) len   18
+After mount0						      <
+0							      <
+=====
+testing our test-inodes on disk aiw.uv6: done.
+diff from reference:
+32768							      <
+**********FS SUPERBLOCK START**********				**********FS SUPERBLOCK START**********
+s_isize             : 64  					s_isize             : 64
+s_fsize             : 4096					s_fsize             : 4096
+s_fbmsize           : 0   					s_fbmsize           : 0
+s_ibmsize           : 0   					s_ibmsize           : 0
+s_inode_start       : 2   					s_inode_start       : 2
+s_block_start       : 66  					s_block_start       : 66
+s_fbm_start         : 0   					s_fbm_start         : 0
+s_ibm_start         : 0   					s_ibm_start         : 0
+s_flock             : 0   					s_flock             : 0
+s_ilock             : 0   					s_ilock             : 0
+s_fmod              : 0   					s_fmod              : 0
+s_ronly             : 0   					s_ronly             : 0
+s_time              : [0] 0					s_time              : [0] 0
+**********FS SUPERBLOCK END**********				**********FS SUPERBLOCK END**********
+inode   1 (DIR) len   16					inode   1 (DIR) len   16
+inode   2 (DIR) len   16					inode   2 (DIR) len   16
+inode   3 (DIR) len   32					inode   3 (DIR) len   32
+inode   4 (DIR) len   240					inode   4 (DIR) len  240
+inode   5 (FIL) len   17385					inode   5 (FIL) len 17385
+inode   6 (FIL) len   631					inode   6 (FIL) len  631
+inode   7 (FIL) len   11761					inode   7 (FIL) len 11761
+inode   8 (FIL) len   11332					inode   8 (FIL) len 11332
+inode   9 (FIL) len   9938					inode   9 (FIL) len 9938
+inode   10 (FIL) len   14282					inode  10 (FIL) len 14282
+inode   11 (FIL) len   12527					inode  11 (FIL) len 12527
+inode   12 (FIL) len   14411					inode  12 (FIL) len 14411
+inode   13 (FIL) len   13459					inode  13 (FIL) len 13459
+inode   14 (FIL) len   14145					inode  14 (FIL) len 14145
+inode   15 (FIL) len   13339					inode  15 (FIL) len 13339
+inode   16 (FIL) len   12147					inode  16 (FIL) len 12147
+inode   17 (FIL) len   10871					inode  17 (FIL) len 10871
+inode   18 (FIL) len   12149					inode  18 (FIL) len 12149
+inode   19 (FIL) len   1428					inode  19 (FIL) len 1428
+inode   20 (DIR) len   16					inode  20 (DIR) len   16
+inode   21 (FIL) len   169856					inode  21 (FIL) len 169856
+After mount32768					      <
+32768							      <
+=====
+testing our test-file on disk simple.uv6: done.
+diff from reference:
+0							      <
+**********FS SUPERBLOCK START**********				**********FS SUPERBLOCK START**********
+s_isize             : 32  					s_isize             : 32
+s_fsize             : 1024					s_fsize             : 1024
+s_fbmsize           : 0   					s_fbmsize           : 0
+s_ibmsize           : 0   					s_ibmsize           : 0
+s_inode_start       : 2   					s_inode_start       : 2
+s_block_start       : 34  					s_block_start       : 34
+s_fbm_start         : 0   					s_fbm_start         : 0
+s_ibm_start         : 0   					s_ibm_start         : 0
+s_flock             : 0   					s_flock             : 0
+s_ilock             : 0   					s_ilock             : 0
+s_fmod              : 0   					s_fmod              : 0
+s_ronly             : 0   					s_ronly             : 0
+s_time              : [0] 0					s_time              : [0] 0
+**********FS SUPERBLOCK END**********				**********FS SUPERBLOCK END**********
+
+Printing inode #3:						Printing inode #3:
+*********FS INODE START**********			      |	**********FS INODE START**********
+i_mode: 32768							i_mode: 32768
+i_nlink: 0							i_nlink: 0
+i_uid: 0							i_uid: 0
+i_gid: 0							i_gid: 0
+i_size0: 0							i_size0: 0
+i_size1: 18							i_size1: 18
+size: 18							size: 18 
+**********FS INDOE END**********			      |	**********FS INODE END**********
+the first sector of data of which contains:			the first sector of data of which contains:
+Coucou le monde !						Coucou le monde !
+
+----								----
+filev6_open failed for inode #5.				filev6_open failed for inode #5.
+
+Listing inodes SHA:						Listing inodes SHA:
+SHA inode 1: no SHA for directories.				SHA inode 1: no SHA for directories.
+SHA inode 2: no SHA for directories.				SHA inode 2: no SHA for directories.
+SHA inode 3: 338fc4bb0d037f3747396a4c852d2a9d8b545d622c6c744c	SHA inode 3: 338fc4bb0d037f3747396a4c852d2a9d8b545d622c6c744c
+After mount0						      <
+0							      <
+=====
+testing our test-file on disk aiw.uv6: done.
+diff from reference:
+32768							      <
+**********FS SUPERBLOCK START**********				**********FS SUPERBLOCK START**********
+s_isize             : 64  					s_isize             : 64
+s_fsize             : 4096					s_fsize             : 4096
+s_fbmsize           : 0   					s_fbmsize           : 0
+s_ibmsize           : 0   					s_ibmsize           : 0
+s_inode_start       : 2   					s_inode_start       : 2
+s_block_start       : 66  					s_block_start       : 66
+s_fbm_start         : 0   					s_fbm_start         : 0
+s_ibm_start         : 0   					s_ibm_start         : 0
+s_flock             : 0   					s_flock             : 0
+s_ilock             : 0   					s_ilock             : 0
+s_fmod              : 0   					s_fmod              : 0
+s_ronly             : 0   					s_ronly             : 0
+s_time              : [0] 0					s_time              : [0] 0
+**********FS SUPERBLOCK END**********				**********FS SUPERBLOCK END**********
+
+Printing inode #3:						Printing inode #3:
+*********FS INODE START**********			      |	**********FS INODE START**********
+i_mode: 49152							i_mode: 49152
+i_nlink: 0							i_nlink: 0
+i_uid: 0							i_uid: 0
+i_gid: 0							i_gid: 0
+i_size0: 0							i_size0: 0
+i_size1: 32							i_size1: 32
+size: 32							size: 32 
+**********FS INDOE END**********			      |	**********FS INODE END**********
+which is a directory.						which is a directory.
+
+Printing inode #5:						Printing inode #5:
+*********FS INODE START**********			      |	**********FS INODE START**********
+i_mode: 32768							i_mode: 32768
+i_nlink: 0							i_nlink: 0
+i_uid: 0							i_uid: 0
+i_gid: 0							i_gid: 0
+i_size0: 0							i_size0: 0
+i_size1: 17385							i_size1: 17385
+size: 17385							size: 17385 
+**********FS INDOE END**********			      |	**********FS INODE END**********
+the first sector of data of which contains:			the first sector of data of which contains:
+*** START: FULL LICENSE ***					*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE				THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK		PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the 	To protect the Project Gutenberg-tm mission of promoting the 
+distribution of electronic works, by using or distributing th	distribution of electronic works, by using or distributing th
+(or any other work associated in any way with the phrase “Pro	(or any other work associated in any way with the phrase “Pro
+Gutenberg”), you agree to comply with all the terms of the Fu	Gutenberg”), you agree to comply with all the terms of the Fu
+Gutenberg-tm License (available with this file or online at	Gutenberg-tm License (available with this file or online at
+http://gutenberg.org/license).					http://gutenberg.org/license).
+
+
+Section 1.  General T						Section 1.  General T
+----								----
+
+Listing inodes SHA:						Listing inodes SHA:
+SHA inode 1: no SHA for directories.				SHA inode 1: no SHA for directories.
+SHA inode 2: no SHA for directories.				SHA inode 2: no SHA for directories.
+SHA inode 3: no SHA for directories.				SHA inode 3: no SHA for directories.
+SHA inode 4: no SHA for directories.				SHA inode 4: no SHA for directories.
+SHA inode 5: 819b3529b07803dcb47741634ae1b40e497ec95a446ab1e1	SHA inode 5: 819b3529b07803dcb47741634ae1b40e497ec95a446ab1e1
+SHA inode 6: 076b4252236b5c65a22770eb8c3316e2ac0629805a5e2d72	SHA inode 6: 076b4252236b5c65a22770eb8c3316e2ac0629805a5e2d72
+SHA inode 7: c2971e205022f72b0caa0aa10daca11be0212d943013272c	SHA inode 7: c2971e205022f72b0caa0aa10daca11be0212d943013272c
+SHA inode 8: 48cd4b1136fa0838f3bf8ce223e797f38706181ca12e9e6b	SHA inode 8: 48cd4b1136fa0838f3bf8ce223e797f38706181ca12e9e6b
+SHA inode 9: 41f2dc3958e33e459e0c6cd220815f50a3979cc1e5aa4bb8	SHA inode 9: 41f2dc3958e33e459e0c6cd220815f50a3979cc1e5aa4bb8
+SHA inode 10: cdea875906eee21f90f754383002eaa759e8d7cca8a1f02	SHA inode 10: cdea875906eee21f90f754383002eaa759e8d7cca8a1f02
+SHA inode 11: 0a0741431cbb375690b4caff30179e3c69f877d099ba0f9	SHA inode 11: 0a0741431cbb375690b4caff30179e3c69f877d099ba0f9
+SHA inode 12: f55cfe8b940af2afa0ce0fe4f3a3b3a2985ad729cf5ba81	SHA inode 12: f55cfe8b940af2afa0ce0fe4f3a3b3a2985ad729cf5ba81
+SHA inode 13: 2230f84ec20cd05e47ae9472cb9c72e465a793284b72196	SHA inode 13: 2230f84ec20cd05e47ae9472cb9c72e465a793284b72196
+SHA inode 14: 5daf44c4d13d3dce6fae82048229b01d9f1ae9571bebb4c	SHA inode 14: 5daf44c4d13d3dce6fae82048229b01d9f1ae9571bebb4c
+SHA inode 15: 096013d6aab6164cdbf871ecdf44620a3efbdc0721a7be8	SHA inode 15: 096013d6aab6164cdbf871ecdf44620a3efbdc0721a7be8
+SHA inode 16: 8c8ebdfc9a861c47bd6b76bfea88496cdab3a6732a6c6c0	SHA inode 16: 8c8ebdfc9a861c47bd6b76bfea88496cdab3a6732a6c6c0
+SHA inode 17: 8a5b56ab6fe0d5dd7c54f0301fd36eff6fc79812c55874c	SHA inode 17: 8a5b56ab6fe0d5dd7c54f0301fd36eff6fc79812c55874c
+SHA inode 18: 5a68e7881617e00238c6b05d4bcf7ccd96fdbfa764d4d2d	SHA inode 18: 5a68e7881617e00238c6b05d4bcf7ccd96fdbfa764d4d2d
+SHA inode 19: 37302d665c56d16309f795f023ffb46d5b457a2aa906a4e	SHA inode 19: 37302d665c56d16309f795f023ffb46d5b457a2aa906a4e
+SHA inode 20: no SHA for directories.				SHA inode 20: no SHA for directories.
+SHA inode 21: 7ee39739006a4a5f1b2a082d1f825837ee4403c85acc8a6	SHA inode 21: 7ee39739006a4a5f1b2a082d1f825837ee4403c85acc8a6
+After mount32768					      <
+32768							      <
+=====
+testing our test-dirent on disk simple.uv6: done.
+diff from reference:
+0							      <
+**********FS SUPERBLOCK START**********				**********FS SUPERBLOCK START**********
+s_isize             : 32  					s_isize             : 32
+s_fsize             : 1024					s_fsize             : 1024
+s_fbmsize           : 0   					s_fbmsize           : 0
+s_ibmsize           : 0   					s_ibmsize           : 0
+s_inode_start       : 2   					s_inode_start       : 2
+s_block_start       : 34  					s_block_start       : 34
+s_fbm_start         : 0   					s_fbm_start         : 0
+s_ibm_start         : 0   					s_ibm_start         : 0
+s_flock             : 0   					s_flock             : 0
+s_ilock             : 0   					s_ilock             : 0
+s_fmod              : 0   					s_fmod              : 0
+s_ronly             : 0   					s_ronly             : 0
+s_time              : [0] 0					s_time              : [0] 0
+**********FS SUPERBLOCK END**********				**********FS SUPERBLOCK END**********
+DIR /								DIR /
+DIR /tmp/							DIR /tmp/
+FIL /tmp/coucou.txt						FIL /tmp/coucou.txt
+After mount0						      <
+0							      <
+=====
+testing our test-dirent on disk aiw.uv6: done.
+diff from reference:
+32768							      <
+**********FS SUPERBLOCK START**********				**********FS SUPERBLOCK START**********
+s_isize             : 64  					s_isize             : 64
+s_fsize             : 4096					s_fsize             : 4096
+s_fbmsize           : 0   					s_fbmsize           : 0
+s_ibmsize           : 0   					s_ibmsize           : 0
+s_inode_start       : 2   					s_inode_start       : 2
+s_block_start       : 66  					s_block_start       : 66
+s_fbm_start         : 0   					s_fbm_start         : 0
+s_ibm_start         : 0   					s_ibm_start         : 0
+s_flock             : 0   					s_flock             : 0
+s_ilock             : 0   					s_ilock             : 0
+s_fmod              : 0   					s_fmod              : 0
+s_ronly             : 0   					s_ronly             : 0
+s_time              : [0] 0					s_time              : [0] 0
+**********FS SUPERBLOCK END**********				**********FS SUPERBLOCK END**********
+DIR /								DIR /
+DIR /books/							DIR /books/
+DIR /books/aiw/							DIR /books/aiw/
+DIR /books/aiw/by_chapters/					DIR /books/aiw/by_chapters/
+FIL /books/aiw/by_chapters/00-licence.txt			FIL /books/aiw/by_chapters/00-licence.txt
+FIL /books/aiw/by_chapters/11-0-beg.txt				FIL /books/aiw/by_chapters/11-0-beg.txt
+FIL /books/aiw/by_chapters/11-0-c01.txt				FIL /books/aiw/by_chapters/11-0-c01.txt
+FIL /books/aiw/by_chapters/11-0-c02.txt				FIL /books/aiw/by_chapters/11-0-c02.txt
+FIL /books/aiw/by_chapters/11-0-c03.txt				FIL /books/aiw/by_chapters/11-0-c03.txt
+FIL /books/aiw/by_chapters/11-0-c04.txt				FIL /books/aiw/by_chapters/11-0-c04.txt
+FIL /books/aiw/by_chapters/11-0-c05.txt				FIL /books/aiw/by_chapters/11-0-c05.txt
+FIL /books/aiw/by_chapters/11-0-c06.txt				FIL /books/aiw/by_chapters/11-0-c06.txt
+FIL /books/aiw/by_chapters/11-0-c07.txt				FIL /books/aiw/by_chapters/11-0-c07.txt
+FIL /books/aiw/by_chapters/11-0-c08.txt				FIL /books/aiw/by_chapters/11-0-c08.txt
+FIL /books/aiw/by_chapters/11-0-c09.txt				FIL /books/aiw/by_chapters/11-0-c09.txt
+FIL /books/aiw/by_chapters/11-0-c10.txt				FIL /books/aiw/by_chapters/11-0-c10.txt
+FIL /books/aiw/by_chapters/11-0-c11.txt				FIL /books/aiw/by_chapters/11-0-c11.txt
+FIL /books/aiw/by_chapters/11-0-c12.txt				FIL /books/aiw/by_chapters/11-0-c12.txt
+FIL /books/aiw/by_chapters/11-0-end.txt				FIL /books/aiw/by_chapters/11-0-end.txt
+DIR /books/aiw/full/						DIR /books/aiw/full/
+FIL /books/aiw/full/11-0.txt					FIL /books/aiw/full/11-0.txt
+After mount32768					      <
+32768							      <
+executable "test-bitmap" wasn't built
+=====
+making (your) shell: 
+cc -std=c99 -Wall -pedantic  -g   -c -o test-inode-read.o test-inode-read.c
+cc   test-inode-read.o test-core.o error.o mount.o inode.o sector.o filev6.o bmblock.o  -lcrypto -o test-inode-read
+cc -std=c99 -Wall -pedantic  -g   -c -o shell.o shell.c
+cc   shell.o inode.o sector.o direntv6.o mount.o filev6.o error.o sha.o bmblock.o  -lcrypto -o shell
+cc -std=c99 -Wall -pedantic  -g   -c -D_DEFAULT_SOURCE $(pkg-config fuse --cflags) -o fs.o -c fs.c
+cc -std=c99 -Wall -pedantic  -g    -o fs fs.o inode.o sector.o direntv6.o mount.o filev6.o error.o sha.o bmblock.o -lcrypto $(pkg-config fuse --libs)
+cc -std=c99 -Wall -pedantic  -g   -c -o test-bmblock.o test-bmblock.c
+cc   test-bmblock.o error.o bmblock.o mount.o inode.o filev6.o direntv6.o sector.o  -lcrypto -o test-bmblock
+rm -f *.o
+shell done.
+testing your shell: 
+done.
+diff from reference:
+> ERROR SHELL: mount the FS before the operation	      |	Shell interpretor
+> ERROR FS: IO error: No such file or directory		      |	Type "help" for more information.
+> > DIR /						      |	>>> ERROR SHELL: mount the FS before the operation
+							      >	>>> ERROR FS: IO error: No such file or directory
+							      >	>>> >>> DIR /
+DIR /tmp/							DIR /tmp/
+FIL /tmp/coucou.txt						FIL /tmp/coucou.txt
+> Coucou le monde !					      |	>>> Coucou le monde !
+> *********FS INODE START**********			      |
+							      >	>>> **********FS INODE START**********
+i_mode: 49152							i_mode: 49152
+i_nlink: 0							i_nlink: 0
+i_uid: 0							i_uid: 0
+i_gid: 0							i_gid: 0
+i_size0: 0							i_size0: 0
+i_size1: 16							i_size1: 16
+size: 16							size: 16 
+**********FS INDOE END**********			      |	**********FS INODE END**********
+> *********FS INODE START**********			      |	>>> **********FS INODE START**********
+i_mode: 32768							i_mode: 32768
+i_nlink: 0							i_nlink: 0
+i_uid: 0							i_uid: 0
+i_gid: 0							i_gid: 0
+i_size0: 0							i_size0: 0
+i_size1: 18							i_size1: 18
+size: 18							size: 18 
+**********FS INDOE END**********			      |	**********FS INODE END**********
+> inode: 2						      |	>>> inode: 2
+> inode: 3						      |	>>> inode: 3
+> **********FS SUPERBLOCK START**********		      |	>>> **********FS SUPERBLOCK START**********
+s_isize             : 32  					s_isize             : 32
+s_fsize             : 1024					s_fsize             : 1024
+s_fbmsize           : 0   					s_fbmsize           : 0
+s_ibmsize           : 0   					s_ibmsize           : 0
+s_inode_start       : 2   					s_inode_start       : 2
+s_block_start       : 34  					s_block_start       : 34
+s_fbm_start         : 0   					s_fbm_start         : 0
+s_ibm_start         : 0   					s_ibm_start         : 0
+s_flock             : 0   					s_flock             : 0
+s_ilock             : 0   					s_ilock             : 0
+s_fmod              : 0   					s_fmod              : 0
+s_ronly             : 0   					s_ronly             : 0
+s_time              : [0] 0					s_time              : [0] 0
+**********FS SUPERBLOCK END**********				**********FS SUPERBLOCK END**********
+> - help: display this help.				      |	>>> 	- help: display this help.
+- exit: exit shell.							- exit: exit shell.
+- quit: exit shell.							- quit: exit shell.
+- mkfs <diskname> <#inode> <#blocks>: create a new filesystem |		- mkfs <diskname> <#inodes> <#blocks>: create a new f
+- lsall: list all directories and files containes in the curr <
+- add <src-fullpath> <dst>: add a new file.		      <
+- mkdir <dirname>: create a new directory.		      <
+- mount <diskname>: mount the provided filesystem.			- mount <diskname>: mount the provided filesystem.
+							      >		- mkdir <dirname>: create a new directory.
+							      >		- lsall: list all directories and files contained in 
+							      >		- add <src-fullpath> <dst>: add a new file.
+- cat <pathname>: display the content of a file.			- cat <pathname>: display the content of a file.
+- istat <inode_nr>: display information about the provided in		- istat <inode_nr>: display information about the pro
+- inode <pathname>: display the inode number of a file.			- inode <pathname>: display the inode number of a fil
+- sha <pathname>: display the SHA of a file.				- sha <pathname>: display the SHA of a file.
+- psb: Print superBlock of the currently mounted filesystem.  |		- psb: Print SuperBlock of the currently mounted file
+> SHA inode 3: 338fc4bb0d037f3747396a4c852d2a9d8b545d622c6c74 |	>>> SHA inode 3: 338fc4bb0d037f3747396a4c852d2a9d8b545d622c6c
+> > DIR /						      |	>>> >>> DIR /
+DIR /books/							DIR /books/
+DIR /books/aiw/							DIR /books/aiw/
+DIR /books/aiw/by_chapters/					DIR /books/aiw/by_chapters/
+FIL /books/aiw/by_chapters/00-licence.txt			FIL /books/aiw/by_chapters/00-licence.txt
+FIL /books/aiw/by_chapters/11-0-beg.txt				FIL /books/aiw/by_chapters/11-0-beg.txt
+FIL /books/aiw/by_chapters/11-0-c01.txt				FIL /books/aiw/by_chapters/11-0-c01.txt
+FIL /books/aiw/by_chapters/11-0-c02.txt				FIL /books/aiw/by_chapters/11-0-c02.txt
+FIL /books/aiw/by_chapters/11-0-c03.txt				FIL /books/aiw/by_chapters/11-0-c03.txt
+FIL /books/aiw/by_chapters/11-0-c04.txt				FIL /books/aiw/by_chapters/11-0-c04.txt
+FIL /books/aiw/by_chapters/11-0-c05.txt				FIL /books/aiw/by_chapters/11-0-c05.txt
+FIL /books/aiw/by_chapters/11-0-c06.txt				FIL /books/aiw/by_chapters/11-0-c06.txt
+FIL /books/aiw/by_chapters/11-0-c07.txt				FIL /books/aiw/by_chapters/11-0-c07.txt
+FIL /books/aiw/by_chapters/11-0-c08.txt				FIL /books/aiw/by_chapters/11-0-c08.txt
+FIL /books/aiw/by_chapters/11-0-c09.txt				FIL /books/aiw/by_chapters/11-0-c09.txt
+FIL /books/aiw/by_chapters/11-0-c10.txt				FIL /books/aiw/by_chapters/11-0-c10.txt
+FIL /books/aiw/by_chapters/11-0-c11.txt				FIL /books/aiw/by_chapters/11-0-c11.txt
+FIL /books/aiw/by_chapters/11-0-c12.txt				FIL /books/aiw/by_chapters/11-0-c12.txt
+FIL /books/aiw/by_chapters/11-0-end.txt				FIL /books/aiw/by_chapters/11-0-end.txt
+DIR /books/aiw/full/						DIR /books/aiw/full/
+FIL /books/aiw/full/11-0.txt					FIL /books/aiw/full/11-0.txt
+> SHA inode 21: 7ee39739006a4a5f1b2a082d1f825837ee4403c85acc8 |	>>> SHA inode 21: 7ee39739006a4a5f1b2a082d1f825837ee4403c85ac
+> inode: 17						      |	>>> inode: 17
+> *********FS INODE START**********			      |	>>> **********FS INODE START**********
+i_mode: 32768							i_mode: 32768
+i_nlink: 0							i_nlink: 0
+i_uid: 0							i_uid: 0
+i_gid: 0							i_gid: 0
+i_size0: 0							i_size0: 0
+i_size1: 1428							i_size1: 1428
+size: 1428							size: 1428 
+**********FS INDOE END**********			      |	**********FS INODE END**********
+> ERROR FS: unallocated inode				      |	>>> ERROR FS: unallocated inode
+> CHAPTER VIII. The Queen’s Croquet-Ground		      |	>>> CHAPTER VIII. The Queen’s Croquet-Ground
+
+A large rose-tree stood near the entrance of the garden: the 	A large rose-tree stood near the entrance of the garden: the 
+growing on it were white, but there were three gardeners at i	growing on it were white, but there were three gardeners at i
+painting them red. Alice thought this a very curious thing, a	painting them red. Alice thought this a very curious thing, a
+nearer to watch them, and just as she came up to them she hea	nearer to watch them, and just as she came up to them she hea
+them say, ‘Look out now, Five! Don’t go splashing paint over 	them say, ‘Look out now, Five! Don’t go splashing paint over 
+that!’								that!’
+
+‘I couldn’t help it,’ said Five, in a sulky tone; ‘Seven jogg	‘I couldn’t help it,’ said Five, in a sulky tone; ‘Seven jogg
+elbow.’								elbow.’
+
+On which Seven looked up and said, ‘That’s right, Five! Alway	On which Seven looked up and said, ‘That’s right, Five! Alway
+blame on others!’						blame on others!’
+
+‘YOU’D better not talk!’ said Five. ‘I heard the Queen say on	‘YOU’D better not talk!’ said Five. ‘I heard the Queen say on
+yesterday you deserved to be beheaded!’				yesterday you deserved to be beheaded!’
+
+‘What for?’ said the one who had spoken first.			‘What for?’ said the one who had spoken first.
+
+‘That’s none of YOUR business, Two!’ said Seven.		‘That’s none of YOUR business, Two!’ said Seven.
+
+‘Yes, it IS his business!’ said Five, ‘and I’ll tell him--it 	‘Yes, it IS his business!’ said Five, ‘and I’ll tell him--it 
+bringing the cook tulip-roots instead of onions.’		bringing the cook tulip-roots instead of onions.’
+
+Seven flung down his brush, and had just begun ‘Well, of all 	Seven flung down his brush, and had just begun ‘Well, of all 
+things--’ when his eye chanced to fall upon Alice, as she sto	things--’ when his eye chanced to fall upon Alice, as she sto
+them, and he checked himself suddenly: the others looked roun	them, and he checked himself suddenly: the others looked roun
+all of them bowed low.						all of them bowed low.
+
+‘Would you tell me,’ said Alice, a little timidly, ‘why you a	‘Would you tell me,’ said Alice, a little timidly, ‘why you a
+those roses?’							those roses?’
+
+Five and Seven said nothing, but looked at Two. Two began in 	Five and Seven said nothing, but looked at Two. Two began in 
+voice, ‘Why the fact is, you see, Miss, this here ought to ha	voice, ‘Why the fact is, you see, Miss, this here ought to ha
+RED rose-tree, and we put a white one in by mistake; and if t	RED rose-tree, and we put a white one in by mistake; and if t
+was to find it out, we should all have our heads cut off, you	was to find it out, we should all have our heads cut off, you
+So you see, Miss, we’re doing our best, afore she comes, to--	So you see, Miss, we’re doing our best, afore she comes, to--
+moment Five, who had been anxiously looking across the garden	moment Five, who had been anxiously looking across the garden
+out ‘The Queen! The Queen!’ and the three gardeners instantly	out ‘The Queen! The Queen!’ and the three gardeners instantly
+themselves flat upon their faces. There was a sound of many f	themselves flat upon their faces. There was a sound of many f
+and Alice looked round, eager to see the Queen.			and Alice looked round, eager to see the Queen.
+
+First came ten soldiers carrying clubs; these were all shaped	First came ten soldiers carrying clubs; these were all shaped
+the three gardeners, oblong and flat, with their hands and fe	the three gardeners, oblong and flat, with their hands and fe
+corners: next the ten courtiers; these were ornamented all ov	corners: next the ten courtiers; these were ornamented all ov
+diamonds, and walked two and two, as the soldiers did. After 	diamonds, and walked two and two, as the soldiers did. After 
+the royal children; there were ten of them, and the little de	the royal children; there were ten of them, and the little de
+jumping merrily along hand in hand, in couples: they were all	jumping merrily along hand in hand, in couples: they were all
+with hearts. Next came the guests, mostly Kings and Queens, a	with hearts. Next came the guests, mostly Kings and Queens, a
+them Alice recognised the White Rabbit: it was talking in a h	them Alice recognised the White Rabbit: it was talking in a h
+nervous manner, smiling at everything that was said, and went	nervous manner, smiling at everything that was said, and went
+noticing her. Then followed the Knave of Hearts, carrying the	noticing her. Then followed the Knave of Hearts, carrying the
+crown on a crimson velvet cushion; and, last of all this gran	crown on a crimson velvet cushion; and, last of all this gran
+procession, came THE KING AND QUEEN OF HEARTS.			procession, came THE KING AND QUEEN OF HEARTS.
+
+Alice was rather doubtful whether she ought not to lie down o	Alice was rather doubtful whether she ought not to lie down o
+like the three gardeners, but she could not remember ever hav	like the three gardeners, but she could not remember ever hav
+of such a rule at processions; ‘and besides, what would be th	of such a rule at processions; ‘and besides, what would be th
+a procession,’ thought she, ‘if people had all to lie down up	a procession,’ thought she, ‘if people had all to lie down up
+faces, so that they couldn’t see it?’ So she stood still wher	faces, so that they couldn’t see it?’ So she stood still wher
+and waited.							and waited.
+
+When the procession came opposite to Alice, they all stopped 	When the procession came opposite to Alice, they all stopped 
+at her, and the Queen said severely ‘Who is this?’ She said i	at her, and the Queen said severely ‘Who is this?’ She said i
+Knave of Hearts, who only bowed and smiled in reply.		Knave of Hearts, who only bowed and smiled in reply.
+
+‘Idiot!’ said the Queen, tossing her head impatiently; and, t	‘Idiot!’ said the Queen, tossing her head impatiently; and, t
+Alice, she went on, ‘What’s your name, child?’			Alice, she went on, ‘What’s your name, child?’
+
+‘My name is Alice, so please your Majesty,’ said Alice very p	‘My name is Alice, so please your Majesty,’ said Alice very p
+but she added, to herself, ‘Why, they’re only a pack of cards	but she added, to herself, ‘Why, they’re only a pack of cards
+all. I needn’t be afraid of them!’				all. I needn’t be afraid of them!’
+
+‘And who are THESE?’ said the Queen, pointing to the three ga	‘And who are THESE?’ said the Queen, pointing to the three ga
+were lying round the rosetree; for, you see, as they were lyi	were lying round the rosetree; for, you see, as they were lyi
+faces, and the pattern on their backs was the same as the res	faces, and the pattern on their backs was the same as the res
+pack, she could not tell whether they were gardeners, or sold	pack, she could not tell whether they were gardeners, or sold
+courtiers, or three of her own children.			courtiers, or three of her own children.
+
+‘How should I know?’ said Alice, surprised at her own courage	‘How should I know?’ said Alice, surprised at her own courage
+business of MINE.’						business of MINE.’
+
+The Queen turned crimson with fury, and, after glaring at her	The Queen turned crimson with fury, and, after glaring at her
+moment like a wild beast, screamed ‘Off with her head! Off--’	moment like a wild beast, screamed ‘Off with her head! Off--’
+
+‘Nonsense!’ said Alice, very loudly and decidedly, and the Qu	‘Nonsense!’ said Alice, very loudly and decidedly, and the Qu
+silent.								silent.
+
+The King laid his hand upon her arm, and timidly said ‘Consid	The King laid his hand upon her arm, and timidly said ‘Consid
+dear: she is only a child!’					dear: she is only a child!’
+
+The Queen turned angrily away from him, and said to the Knave	The Queen turned angrily away from him, and said to the Knave
+over!’								over!’
+
+The Knave did so, very carefully, with one foot.		The Knave did so, very carefully, with one foot.
+
+‘Get up!’ said the Queen, in a shrill, loud voice, and the th	‘Get up!’ said the Queen, in a shrill, loud voice, and the th
+gardeners instantly jumped up, and began bowing to the King, 	gardeners instantly jumped up, and began bowing to the King, 
+the royal children, and everybody else.				the royal children, and everybody else.
+
+‘Leave off that!’ screamed the Queen. ‘You make me giddy.’ An	‘Leave off that!’ screamed the Queen. ‘You make me giddy.’ An
+turning to the rose-tree, she went on, ‘What HAVE you been do	turning to the rose-tree, she went on, ‘What HAVE you been do
+
+‘May it please your Majesty,’ said Two, in a very humble tone	‘May it please your Majesty,’ said Two, in a very humble tone
+down on one knee as he spoke, ‘we were trying--’		down on one knee as he spoke, ‘we were trying--’
+
+‘I see!’ said the Queen, who had meanwhile been examining the	‘I see!’ said the Queen, who had meanwhile been examining the
+‘Off with their heads!’ and the procession moved on, three of	‘Off with their heads!’ and the procession moved on, three of
+soldiers remaining behind to execute the unfortunate gardener	soldiers remaining behind to execute the unfortunate gardener
+to Alice for protection.					to Alice for protection.
+
+‘You shan’t be beheaded!’ said Alice, and she put them into a	‘You shan’t be beheaded!’ said Alice, and she put them into a
+flower-pot that stood near. The three soldiers wandered about	flower-pot that stood near. The three soldiers wandered about
+minute or two, looking for them, and then quietly marched off	minute or two, looking for them, and then quietly marched off
+others.								others.
+
+‘Are their heads off?’ shouted the Queen.			‘Are their heads off?’ shouted the Queen.
+
+‘Their heads are gone, if it please your Majesty!’ the soldie	‘Their heads are gone, if it please your Majesty!’ the soldie
+in reply.							in reply.
+
+‘That’s right!’ shouted the Queen. ‘Can you play croquet?’	‘That’s right!’ shouted the Queen. ‘Can you play croquet?’
+
+The soldiers were silent, and looked at Alice, as the questio	The soldiers were silent, and looked at Alice, as the questio
+evidently meant for her.					evidently meant for her.
+
+‘Yes!’ shouted Alice.						‘Yes!’ shouted Alice.
+
+‘Come on, then!’ roared the Queen, and Alice joined the proce	‘Come on, then!’ roared the Queen, and Alice joined the proce
+wondering very much what would happen next.			wondering very much what would happen next.
+
+‘It’s--it’s a very fine day!’ said a timid voice at her side.	‘It’s--it’s a very fine day!’ said a timid voice at her side.
+walking by the White Rabbit, who was peeping anxiously into h	walking by the White Rabbit, who was peeping anxiously into h
+
+‘Very,’ said Alice: ‘--where’s the Duchess?’			‘Very,’ said Alice: ‘--where’s the Duchess?’
+
+‘Hush! Hush!’ said the Rabbit in a low, hurried tone. He look	‘Hush! Hush!’ said the Rabbit in a low, hurried tone. He look
+anxiously over his shoulder as he spoke, and then raised hims	anxiously over his shoulder as he spoke, and then raised hims
+tiptoe, put his mouth close to her ear, and whispered ‘She’s 	tiptoe, put his mouth close to her ear, and whispered ‘She’s 
+sentence of execution.’						sentence of execution.’
+
+‘What for?’ said Alice.						‘What for?’ said Alice.
+
+‘Did you say “What a pity!”?’ the Rabbit asked.			‘Did you say “What a pity!”?’ the Rabbit asked.
+
+‘No, I didn’t,’ said Alice: ‘I don’t think it’s at all a pity	‘No, I didn’t,’ said Alice: ‘I don’t think it’s at all a pity
+“What for?”’							“What for?”’
+
+‘She boxed the Queen’s ears--’ the Rabbit began. Alice gave a	‘She boxed the Queen’s ears--’ the Rabbit began. Alice gave a
+scream of laughter. ‘Oh, hush!’ the Rabbit whispered in a fri	scream of laughter. ‘Oh, hush!’ the Rabbit whispered in a fri
+tone. ‘The Queen will hear you! You see, she came rather late	tone. ‘The Queen will hear you! You see, she came rather late
+Queen said--’							Queen said--’
+
+‘Get to your places!’ shouted the Queen in a voice of thunder	‘Get to your places!’ shouted the Queen in a voice of thunder
+people began running about in all directions, tumbling up aga	people began running about in all directions, tumbling up aga
+other; however, they got settled down in a minute or two, and	other; however, they got settled down in a minute or two, and
+began. Alice thought she had never seen such a curious croque	began. Alice thought she had never seen such a curious croque
+her life; it was all ridges and furrows; the balls were live 	her life; it was all ridges and furrows; the balls were live 
+the mallets live flamingoes, and the soldiers had to double t	the mallets live flamingoes, and the soldiers had to double t
+up and to stand on their hands and feet, to make the arches.	up and to stand on their hands and feet, to make the arches.
+
+The chief difficulty Alice found at first was in managing her	The chief difficulty Alice found at first was in managing her
+she succeeded in getting its body tucked away, comfortably en	she succeeded in getting its body tucked away, comfortably en
+her arm, with its legs hanging down, but generally, just as s	her arm, with its legs hanging down, but generally, just as s
+its neck nicely straightened out, and was going to give the h	its neck nicely straightened out, and was going to give the h
+blow with its head, it WOULD twist itself round and look up i	blow with its head, it WOULD twist itself round and look up i
+with such a puzzled expression that she could not help bursti	with such a puzzled expression that she could not help bursti
+laughing: and when she had got its head down, and was going t	laughing: and when she had got its head down, and was going t
+again, it was very provoking to find that the hedgehog had un	again, it was very provoking to find that the hedgehog had un
+itself, and was in the act of crawling away: besides all this	itself, and was in the act of crawling away: besides all this
+generally a ridge or furrow in the way wherever she wanted to	generally a ridge or furrow in the way wherever she wanted to
+hedgehog to, and, as the doubled-up soldiers were always gett	hedgehog to, and, as the doubled-up soldiers were always gett
+and walking off to other parts of the ground, Alice soon came	and walking off to other parts of the ground, Alice soon came
+conclusion that it was a very difficult game indeed.		conclusion that it was a very difficult game indeed.
+
+The players all played at once without waiting for turns, qua	The players all played at once without waiting for turns, qua
+all the while, and fighting for the hedgehogs; and in a very 	all the while, and fighting for the hedgehogs; and in a very 
+time the Queen was in a furious passion, and went stamping ab	time the Queen was in a furious passion, and went stamping ab
+shouting ‘Off with his head!’ or ‘Off with her head!’ about o	shouting ‘Off with his head!’ or ‘Off with her head!’ about o
+minute.								minute.
+
+Alice began to feel very uneasy: to be sure, she had not as y	Alice began to feel very uneasy: to be sure, she had not as y
+dispute with the Queen, but she knew that it might happen any	dispute with the Queen, but she knew that it might happen any
+‘and then,’ thought she, ‘what would become of me? They’re dr	‘and then,’ thought she, ‘what would become of me? They’re dr
+fond of beheading people here; the great wonder is, that ther	fond of beheading people here; the great wonder is, that ther
+left alive!’							left alive!’
+
+She was looking about for some way of escape, and wondering w	She was looking about for some way of escape, and wondering w
+could get away without being seen, when she noticed a curious	could get away without being seen, when she noticed a curious
+in the air: it puzzled her very much at first, but, after wat	in the air: it puzzled her very much at first, but, after wat
+a minute or two, she made it out to be a grin, and she said t	a minute or two, she made it out to be a grin, and she said t
+‘It’s the Cheshire Cat: now I shall have somebody to talk to.	‘It’s the Cheshire Cat: now I shall have somebody to talk to.
+
+‘How are you getting on?’ said the Cat, as soon as there was 	‘How are you getting on?’ said the Cat, as soon as there was 
+enough for it to speak with.					enough for it to speak with.
+
+Alice waited till the eyes appeared, and then nodded. ‘It’s n	Alice waited till the eyes appeared, and then nodded. ‘It’s n
+speaking to it,’ she thought, ‘till its ears have come, or at	speaking to it,’ she thought, ‘till its ears have come, or at
+of them.’ In another minute the whole head appeared, and then	of them.’ In another minute the whole head appeared, and then
+down her flamingo, and began an account of the game, feeling 	down her flamingo, and began an account of the game, feeling 
+she had someone to listen to her. The Cat seemed to think tha	she had someone to listen to her. The Cat seemed to think tha
+enough of it now in sight, and no more of it appeared.		enough of it now in sight, and no more of it appeared.
+
+‘I don’t think they play at all fairly,’ Alice began, in rath	‘I don’t think they play at all fairly,’ Alice began, in rath
+complaining tone, ‘and they all quarrel so dreadfully one can	complaining tone, ‘and they all quarrel so dreadfully one can
+oneself speak--and they don’t seem to have any rules in parti	oneself speak--and they don’t seem to have any rules in parti
+at least, if there are, nobody attends to them--and you’ve no	at least, if there are, nobody attends to them--and you’ve no
+confusing it is all the things being alive; for instance, the	confusing it is all the things being alive; for instance, the
+arch I’ve got to go through next walking about at the other e	arch I’ve got to go through next walking about at the other e
+ground--and I should have croqueted the Queen’s hedgehog just	ground--and I should have croqueted the Queen’s hedgehog just
+it ran away when it saw mine coming!’				it ran away when it saw mine coming!’
+
+‘How do you like the Queen?’ said the Cat in a low voice.	‘How do you like the Queen?’ said the Cat in a low voice.
+
+‘Not at all,’ said Alice: ‘she’s so extremely--’ Just then sh	‘Not at all,’ said Alice: ‘she’s so extremely--’ Just then sh
+that the Queen was close behind her, listening: so she went o	that the Queen was close behind her, listening: so she went o
+‘--likely to win, that it’s hardly worth while finishing the 	‘--likely to win, that it’s hardly worth while finishing the 
+
+The Queen smiled and passed on.					The Queen smiled and passed on.
+
+‘Who ARE you talking to?’ said the King, going up to Alice, a	‘Who ARE you talking to?’ said the King, going up to Alice, a
+at the Cat’s head with great curiosity.				at the Cat’s head with great curiosity.
+
+‘It’s a friend of mine--a Cheshire Cat,’ said Alice: ‘allow m	‘It’s a friend of mine--a Cheshire Cat,’ said Alice: ‘allow m
+introduce it.’							introduce it.’
+
+‘I don’t like the look of it at all,’ said the King: ‘however	‘I don’t like the look of it at all,’ said the King: ‘however
+kiss my hand if it likes.’					kiss my hand if it likes.’
+
+‘I’d rather not,’ the Cat remarked.				‘I’d rather not,’ the Cat remarked.
+
+‘Don’t be impertinent,’ said the King, ‘and don’t look at me 	‘Don’t be impertinent,’ said the King, ‘and don’t look at me 
+He got behind Alice as he spoke.				He got behind Alice as he spoke.
+
+‘A cat may look at a king,’ said Alice. ‘I’ve read that in so	‘A cat may look at a king,’ said Alice. ‘I’ve read that in so
+but I don’t remember where.’					but I don’t remember where.’
+
+‘Well, it must be removed,’ said the King very decidedly, and	‘Well, it must be removed,’ said the King very decidedly, and
+the Queen, who was passing at the moment, ‘My dear! I wish yo	the Queen, who was passing at the moment, ‘My dear! I wish yo
+have this cat removed!’						have this cat removed!’
+
+The Queen had only one way of settling all difficulties, grea	The Queen had only one way of settling all difficulties, grea
+‘Off with his head!’ she said, without even looking round.	‘Off with his head!’ she said, without even looking round.
+
+‘I’ll fetch the executioner myself,’ said the King eagerly, a	‘I’ll fetch the executioner myself,’ said the King eagerly, a
+hurried off.							hurried off.
+
+Alice thought she might as well go back, and see how the game	Alice thought she might as well go back, and see how the game
+on, as she heard the Queen’s voice in the distance, screaming	on, as she heard the Queen’s voice in the distance, screaming
+passion. She had already heard her sentence three of the play	passion. She had already heard her sentence three of the play
+executed for having missed their turns, and she did not like 	executed for having missed their turns, and she did not like 
+of things at all, as the game was in such confusion that she 	of things at all, as the game was in such confusion that she 
+whether it was her turn or not. So she went in search of her 	whether it was her turn or not. So she went in search of her 
+
+The hedgehog was engaged in a fight with another hedgehog, wh	The hedgehog was engaged in a fight with another hedgehog, wh
+to Alice an excellent opportunity for croqueting one of them 	to Alice an excellent opportunity for croqueting one of them 
+other: the only difficulty was, that her flamingo was gone ac	other: the only difficulty was, that her flamingo was gone ac
+other side of the garden, where Alice could see it trying in 	other side of the garden, where Alice could see it trying in 
+sort of way to fly up into a tree.				sort of way to fly up into a tree.
+
+By the time she had caught the flamingo and brought it back, 	By the time she had caught the flamingo and brought it back, 
+was over, and both the hedgehogs were out of sight: ‘but it d	was over, and both the hedgehogs were out of sight: ‘but it d
+matter much,’ thought Alice, ‘as all the arches are gone from	matter much,’ thought Alice, ‘as all the arches are gone from
+of the ground.’ So she tucked it away under her arm, that it 	of the ground.’ So she tucked it away under her arm, that it 
+escape again, and went back for a little more conversation wi	escape again, and went back for a little more conversation wi
+friend.								friend.
+
+When she got back to the Cheshire Cat, she was surprised to f	When she got back to the Cheshire Cat, she was surprised to f
+large crowd collected round it: there was a dispute going on 	large crowd collected round it: there was a dispute going on 
+the executioner, the King, and the Queen, who were all talkin	the executioner, the King, and the Queen, who were all talkin
+while all the rest were quite silent, and looked very uncomfo	while all the rest were quite silent, and looked very uncomfo
+
+The moment Alice appeared, she was appealed to by all three t	The moment Alice appeared, she was appealed to by all three t
+the question, and they repeated their arguments to her, thoug	the question, and they repeated their arguments to her, thoug
+all spoke at once, she found it very hard indeed to make out 	all spoke at once, she found it very hard indeed to make out 
+what they said.							what they said.
+
+The executioner’s argument was, that you couldn’t cut off a h	The executioner’s argument was, that you couldn’t cut off a h
+there was a body to cut it off from: that he had never had to	there was a body to cut it off from: that he had never had to
+thing before, and he wasn’t going to begin at HIS time of lif	thing before, and he wasn’t going to begin at HIS time of lif
+
+The King’s argument was, that anything that had a head could 	The King’s argument was, that anything that had a head could 
+beheaded, and that you weren’t to talk nonsense.		beheaded, and that you weren’t to talk nonsense.
+
+The Queen’s argument was, that if something wasn’t done about	The Queen’s argument was, that if something wasn’t done about
+than no time she’d have everybody executed, all round. (It wa	than no time she’d have everybody executed, all round. (It wa
+remark that had made the whole party look so grave and anxiou	remark that had made the whole party look so grave and anxiou
+
+Alice could think of nothing else to say but ‘It belongs to t	Alice could think of nothing else to say but ‘It belongs to t
+you’d better ask HER about it.’					you’d better ask HER about it.’
+
+‘She’s in prison,’ the Queen said to the executioner: ‘fetch 	‘She’s in prison,’ the Queen said to the executioner: ‘fetch 
+And the executioner went off like an arrow.			And the executioner went off like an arrow.
+
+ The Cat’s head began fading away the moment he was gone, and	 The Cat’s head began fading away the moment he was gone, and
+by the time he had come back with the Duchess, it had entirel	by the time he had come back with the Duchess, it had entirel
+disappeared; so the King and the executioner ran wildly up an	disappeared; so the King and the executioner ran wildly up an
+looking for it, while the rest of the party went back to the 	looking for it, while the rest of the party went back to the 
+> > > ERROR FS: unallocated inode			      |
+> ERROR FS: unallocated inode				      |	>>> >>> >>> DIR /
+> ERROR FS: unallocated inode				      |	>>> >>> DIR /
+> 							      |	>>> 
+=====
+testing mkfs: OK
+=====
+making (your) fs: 
+cc -std=c99 -Wall -pedantic  -g   -c -o test-inodes.o test-inodes.c
+cc -std=c99 -Wall -pedantic  -g   -c -o test-core.o test-core.c
+cc -std=c99 -Wall -pedantic  -g   -c -o error.o error.c
+cc -std=c99 -Wall -pedantic  -g   -c -o mount.o mount.c
+cc -std=c99 -Wall -pedantic  -g   -c -o inode.o inode.c
+cc -std=c99 -Wall -pedantic  -g   -c -o sector.o sector.c
+cc -std=c99 -Wall -pedantic  -g   -c -o filev6.o filev6.c
+cc -std=c99 -Wall -pedantic  -g   -c -o bmblock.o bmblock.c
+cc   test-inodes.o test-core.o error.o mount.o inode.o sector.o filev6.o bmblock.o  -lcrypto -o test-inodes
+cc -std=c99 -Wall -pedantic  -g   -c -o test-inode-read.o test-inode-read.c
+cc   test-inode-read.o test-core.o error.o mount.o inode.o sector.o filev6.o bmblock.o  -lcrypto -o test-inode-read
+cc -std=c99 -Wall -pedantic  -g   -c -o test-file.o test-file.c
+cc -std=c99 -Wall -pedantic  -g   -c -o sha.o sha.c
+cc   test-file.o test-core.o error.o mount.o inode.o filev6.o sha.o sector.o bmblock.o  -lcrypto -o test-file
+cc -std=c99 -Wall -pedantic  -g   -c -o test-dirent.o test-dirent.c
+cc -std=c99 -Wall -pedantic  -g   -c -o direntv6.o direntv6.c
+cc   test-dirent.o test-core.o error.o mount.o inode.o filev6.o direntv6.o sector.o bmblock.o  -lcrypto -o test-dirent
+cc -std=c99 -Wall -pedantic  -g   -c -o shell.o shell.c
+cc   shell.o inode.o sector.o direntv6.o mount.o filev6.o error.o sha.o bmblock.o  -lcrypto -o shell
+cc -std=c99 -Wall -pedantic  -g   -c -D_DEFAULT_SOURCE $(pkg-config fuse --cflags) -o fs.o -c fs.c
+cc -std=c99 -Wall -pedantic  -g    -o fs fs.o inode.o sector.o direntv6.o mount.o filev6.o error.o sha.o bmblock.o -lcrypto $(pkg-config fuse --libs)
+cc -std=c99 -Wall -pedantic  -g   -c -o test-bmblock.o test-bmblock.c
+cc   test-bmblock.o error.o bmblock.o mount.o inode.o filev6.o direntv6.o sector.o  -lcrypto -o test-bmblock
+rm -f *.o
+fs done.
+
+-----
+stderr:
+filev6.c: In function ‘filev6_writebytes’:
+filev6.c:156:9: warning: unused variable ‘tryContinue’ [-Wunused-variable]
+     int tryContinue = filev6_writebytes(u, fv6, (uint8_t*) buf + nb_bytes, len - nb_bytes);
+         ^
+direntv6.c: In function ‘direntv6_create’:
+direntv6.c:222:3: warning: ‘parent’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   strncpy(parent, entry, lastSlash);
+   ^
+/tmp/ccvVzaE8.o: In function `bitmap_test_simple':
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:27: undefined reference to `bm_alloc'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:28: undefined reference to `bm_print'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:29: undefined reference to `bm_find_next'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:30: undefined reference to `bm_set'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:31: undefined reference to `bm_set'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:32: undefined reference to `bm_set'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:33: undefined reference to `bm_print'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:34: undefined reference to `bm_find_next'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:36: undefined reference to `bm_set'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:38: undefined reference to `bm_print'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:39: undefined reference to `bm_find_next'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:41: undefined reference to `bm_clear'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:43: undefined reference to `bm_print'
+/home/whitlock/pps/pps17_repos/team/repositories/pps17-team-infected-wire/repository/done/test-bitmap.c:44: undefined reference to `bm_find_next'
+collect2: error: ld returned 1 exit status
+make: *** [test-bitmap] Error 1
+filev6.c: In function ‘filev6_writebytes’:
+filev6.c:156:9: warning: unused variable ‘tryContinue’ [-Wunused-variable]
+     int tryContinue = filev6_writebytes(u, fv6, (uint8_t*) buf + nb_bytes, len - nb_bytes);
+         ^
+direntv6.c: In function ‘direntv6_create’:
+direntv6.c:222:3: warning: ‘parent’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   strncpy(parent, entry, lastSlash);
+   ^

@@ -1,0 +1,224 @@
+**********FS SUPERBLOCK START**********
+s_isize             : 64  
+s_fsize             : 1024
+s_fbmsize           : 1   
+s_ibmsize           : 1   
+s_inode_start       : 4   
+s_block_start       : 68  
+s_fbm_start         : 2   
+s_ibm_start         : 3   
+s_flock             : 0   
+s_ilock             : 0   
+s_fmod              : 0   
+s_ronly             : 0   
+s_time              : [0] 0
+**********FS SUPERBLOCK END**********
+
+Printing inode #3: 
+*********FS INODE START**********
+i_mode: 49152
+i_nlink: 1
+i_uid: 0
+i_gid: 0
+i_size0: 0
+i_size1: 656
+size: 656
+**********FS INDOE END**********
+C'est un repertoire
+
+Printing inode #5: 
+*********FS INODE START**********
+i_mode: 32768
+i_nlink: 1
+i_uid: 0
+i_gid: 0
+i_size0: 0
+i_size1: 1146
+size: 1146
+**********FS INDOE END**********
+the first sector of data of which contains:
+// Copyright 2011 The Go Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+// Package user allows user account lookups by name or id.
+package user
+
+import (
+	"strconv"
+)
+
+var implemented = true // set to false by lookup_stubs.go's init
+
+// User represents a user account.
+//
+// On posix systems Uid and Gid contain a decimal number
+// representing uid and gid. On windows Uid and Gid
+// contain security identifier (SID) in a s
+----
+SHA inode 1: no SHA for directories.
+SHA inode 2: no SHA for directories.
+SHA inode 3: no SHA for directories.
+SHA inode 4: no SHA for directories.
+SHA inode 5: e70457a113de3c76972600496904945fce30f3366ff0060b5a04e259d3470643
+SHA inode 6: b265502f708b3d1cede8a0dd907c7fc17cc0a7a6404c0ee68331ee3bf3cb1b1c
+SHA inode 7: f6533aeb323ca8720d91f73a4e658bd7e26560f64d89673487803f49096c3bb9
+SHA inode 8: e86dc7dfc18e802d32a7a799fb6b040a994a695efdfc72e2e43519e67358cc74
+SHA inode 9: 8af44e7981b763a73e8c1293c00c678f655e740b681072726d01c34f15cdc991
+SHA inode 10: 15e3693896de5e8127cec299dbbe834ecc2d1294b82f85de0ca362a8f07a8731
+SHA inode 11: cb9b79777a7597a7053f7d4f57243a6df4b14519dcebd2705dc8a161f87c9973
+SHA inode 12: 808b27f6c6eff7c14470c154c233d52105b4e2ab46539a73a440422daef87f88
+SHA inode 13: 099d3fd597dd1c7521686061390cc327c03068e87ebf8269067a47ef6c80f990
+SHA inode 14: 614be3e97c96af0485d8998184fcad8b386e1cd19be4a92c6a848e94dec3421c
+SHA inode 15: no SHA for directories.
+SHA inode 16: 3d93b3d0ad74c4bc2588089518816426071945c1ff26dcf46daa38b4152c8f13
+SHA inode 17: 7e8fcdcc59b3ae3060b187c2b73fcd822c7dd13c0b37b79775bb110e3367f899
+SHA inode 18: 7f431a65f73dce8f5ded0bf86b0a4ed60079aab3845a32ba7a92ac60424b3acf
+SHA inode 19: 811da4e984af676941103f65c96b15c8863e28a61c22b51b181c4d4f0132fc3d
+SHA inode 20: 79169847c7bc1e90a80a2c764eaa798a2645c564794c25e6629d4f0ed095d14d
+SHA inode 21: 238fd32a536c64d0ce010e4df3d69d5951ddd910e2bd84f100d6c401d888561a
+SHA inode 22: 5013700fa197959c9a2ce4f33c3a52c8698e7d6708438ffb9c57414b69ac7fb5
+SHA inode 23: 89d82bb3126596ee64fc128134fcbf9132861521ce01d0366208392c3b265e38
+SHA inode 24: 31de005585449d5107f6dab7c46745e7bb0fccfa28bf51687a9bd19753cc9486
+SHA inode 25: 98b7628114d3d074d715c4030eb3eb6105c0a99d343f46c0b1851f3000de2303
+SHA inode 26: ebe9e44401e7abff0f329ebb042c7d795f95b71451c039e593f03d377c55005b
+SHA inode 27: 78141c97ca4e5ef797cbf935972e678a1457d71107e2548adb8379ee62f648db
+SHA inode 28: 4da0330dcf8cb120b240ee498e1f9b80c2d42e7a5f33b536d4f0bd552d991ec4
+SHA inode 29: 352f6854ed419f684ff1dd61e879383a21f588cfda5dee1d5b1e0d020fb564fc
+SHA inode 30: 28f0cd6eb5e675cc5aea1b0ee57bbd031fedcb67cd059907230391e0ab4b5123
+SHA inode 31: 0fcc4b67b341fc5a47fdc646816b76b504b4c4b7c71dc2f322fbacdc6b94d5b7
+SHA inode 32: b0852677c1d4c0ef761040f36977bd4c521710a431b7fec04577a04c214b9b38
+SHA inode 33: 02cda21c868e4f63c19fe921290a55574e7fc445ee1200979b8f7eefceef4b61
+SHA inode 34: 875cf80ff2060019dfffb74da20e100db1d1b5c0de2b159e68f1c4a878eb821b
+SHA inode 35: f278f6972b0ad0a391d51e9f3bb4988fb4ceaee43ca02fdd93def399fdec7264
+SHA inode 36: 25d325aa786f9d378539cf4e7fcc9a995ffadb75a034264326966f7fa2062052
+SHA inode 37: c12974096e624deec0afc611e5c48c11dd7c44b5dcd438677fab8632602f8022
+SHA inode 38: fbe94e10f5714b1c8e70b0ab719aa016f875a8516073094b6faa221cee83e626
+SHA inode 39: b9cfe14b7095cf7125b186e09d9efd353282af08f6a390d3be31ecc98106f09c
+SHA inode 40: c905c4c581512c10b46ac74aa0b1c26ad05c9e53dca4bb7b894c6924254d86d4
+SHA inode 41: cdde24560b052b431b51e817fa17df062b911c9600b5acd306c7c6b3b104dfb2
+SHA inode 42: 9ea3c479e07f3d0e849988cd0ccc34e7d137498b09b6eba5ae2091bb89b23a82
+SHA inode 43: 93fbe644e7002f2647e228edc03511ed7cc18c9c42bf6fc74f219f4c6cd858e8
+SHA inode 44: 64750de69615689d835d8440358db1204f902767ff7c3ca9b48051a6abe30bb2
+SHA inode 45: e3a1c6ae113fd2e2b38aeef72f9f12236f6f6bb52c8966f624098a2b16d740eb
+SHA inode 46: c6434695b790121d3dadf19e1fbd2dcf3b548b08c1a08eb5c57b7f6c227a30f1
+SHA inode 47: cb78bc4b70712a7e134c5ed98e56b044b9726b29dab1fcd1e97dab4ced0d9b68
+SHA inode 48: 6871bc80ef2ad7cb358bf1fc9c8691e0bf497b2d71ca167eb062c58cf592603c
+SHA inode 49: 087240507ea3077fbac01850b4a13127efaa6386405361ff0d03475354460327
+SHA inode 50: bb5953eebba4a9f2312a26dd872e3a90372596f94ecc5fe1c3d33bba68a0a935
+SHA inode 51: 2da9effe76b16f702d6ba3385d1f839a5038e62a1be91593924a06d0e0f4e0df
+SHA inode 52: 15f0ae789557a3d01241f539ac9cf4837b30fe7a7cf41c2bdee3dab510e68a79
+SHA inode 53: no SHA for directories.
+SHA inode 54: 5d49f506aaeea284da3d0b8d8d01ef3b87056a44a2851871b6766268edc16e46
+SHA inode 55: bd4a7860cea74f2741c37cde21ef7add1acfacd1f37ac3dada6d98742b1e486d
+SHA inode 56: 47101a200d4e8f7a1c120176267547f841683d2f7be4880fd419fc1b3f708b6a
+SHA inode 57: 0c24400682141181c5632b3db0c814a82af57241d9b15828bd7c9c750f060bff
+SHA inode 58: 0458f64b10433ada7d442922aaab7bb28bef7d5f2f5a78440d460b1c161a4e35
+SHA inode 59: 5dae78a4f1202e3f1acabc3b6049c2e850fa1c69e406484e93a2feddd55d4927
+SHA inode 60: no SHA for directories.
+SHA inode 61: no SHA for directories.
+SHA inode 62: 037decf58d38bbd23049a480036adbd689a28612a4856a91f0d3e4f73fb051f4
+SHA inode 63: 24d5275fef4cb0f1d5962fceaffc845f6330f05766720453edfeafb42931ac15
+SHA inode 64: 491591251d4777aa22fd7a354a4dda7f0ee7211f72c4b8bce2e25fe48453a20e
+SHA inode 65: ef3d64998f85549de46284bbc5dd1bff7e3bfed52051cb92a329db01fcfda04e
+SHA inode 66: ea1bad9e7def8209163c21e32e0c344c48f99f41095466fe68dc2dd0ba9b9fa9
+SHA inode 67: 1ba21490914263edbedc690c7521878325fb0d623cbac1839b39abd9d7eab568
+SHA inode 68: f2d0037cbd3056f844b5830efaaadfd802ed586e6b554bfab5786058b364d394
+SHA inode 69: no SHA for directories.
+SHA inode 70: c280b08110d557b59a9ae46b496ebce6a87466d97af42bcf7887e0d89c90a0d4
+SHA inode 71: c6ce9cdcc5b719120c525e2680e9375d5911aaf6f7f023e7929310d4a198e748
+SHA inode 72: 0f9dcd9fb4ca0be4566ae02832a8ea6974f61649b6c1e3abb83a30bae358be7f
+SHA inode 73: 7b54ea9d8ce44cbed6b41bcdeadedb86e82150f4c689f1f69ac9233036aea54a
+SHA inode 74: fc638ed5798e0fe6fd6b66cc115f2c0446d3a8967350d0d3e40f5d599fd63fbd
+SHA inode 75: eeee8ac90ce00f0e226cf63c7c0cc55b94e933e25b7f70f636e8ca2c0458b0c0
+SHA inode 76: 85eb6732843a9f98d1685f1c7b1d5e5636c47759011e26d9eb5f9a54deccfff9
+SHA inode 77: c857256df3aa4b6be32bf67959cddddc40b260aedaca2fde0e607c59321860fc
+SHA inode 78: f40cc9c87b50bc702ac91e2bc996289d4895adac4e986e1cf5e15016b5ec7d46
+SHA inode 79: 7f09c019d8cde32ed23db9a35ee9a6d49b7c6b33209bcda14209503a85a893dd
+SHA inode 80: 58ece22284a3283e7991b8867e04264768eee56449119d43a1e34cdebf706c67
+SHA inode 81: e5a645c7e45b41b9dc31cbf80d605d6a4354fae9ff3e2ceb73d4d69ff1f0cd37
+SHA inode 82: 705f8b582dbdcdfe7573ed72bf0a48dca79b8eb08621208f6a8bfad94efb67c5
+SHA inode 83: no SHA for directories.
+SHA inode 84: no SHA for directories.
+SHA inode 85: 8c0ef77a68fd0bd7472d62fcd2b89b76363527ce5f72ab9b70e6799361829dc3
+SHA inode 86: 71d95570374cbf13584a5a7b4d3e2be9b314d1aef7adbccd001e895df09dec51
+SHA inode 87: e975aac452643a1a5380e24a4d69eb52489fc1eccdcf052bd818b2294064bd57
+SHA inode 88: 263e667263cef1846e7239b000eac4c50ff1c0387c5c4ab713fc48e0422e5aae
+SHA inode 89: c44c49b69adace262c554e31813f2a9f4a30253cf86d1bec172cb998c6c04c3f
+SHA inode 90: fc45c6e64bf845ee72f2ba571e38e21fe52731a3b9f601b2045400db020c86bc
+SHA inode 91: 847a5403c7368e16fcd5d37156b8970194e8b3aeada46ea806efb02ae5da0108
+SHA inode 92: fc45c6e64bf845ee72f2ba571e38e21fe52731a3b9f601b2045400db020c86bc
+SHA inode 93: 5b1e7cb9631de18c6c68a67fed797cb51eec7bb410197d467a558c4add0a3e3a
+SHA inode 94: 0928c983188f94b12065be577f190603344946f35b8a4b6859f67ce340a6a627
+SHA inode 95: 6a42d1da7b87ae25b1c4c8b7d29b7239f389afbe06b7484ddc3e041ebb4c9b82
+SHA inode 96: c4f8f294c5f34bb103da06bbd1bf194419ce9f1b6c367c73f7ccf75f57c48a96
+SHA inode 97: aee1fd460358a246371d2e1a6d7077750a4ffcae870b12ffd7f1a82a8449b1c1
+SHA inode 98: ce85cd714223d5448e364c7d1e06ddf03edd1acb02ed392210b682a9c48d9d40
+SHA inode 99: 31079215e0a4b452dddbb8a5c33ce855ee884b070ba5b67f00a2d37ae64063cf
+SHA inode 100: 24abadb39fcd0d7884ef1fd590d7679e42f11fb9fa34e264707671b7a7e4a98f
+SHA inode 101: a54d4dc5106e9f5b717835bc5bbc9b55d00e4bb3520235752d8a53ad8c53df09
+SHA inode 102: d597e2c47e50ecee3d0ccc4efcabbed0d327286ad2ecb8d0cdfe9c91077611ee
+SHA inode 103: 0f27ae638f4a75a9bda188ffa93bc2bfd769249740f543cbf599acd447c90664
+SHA inode 104: ec99c2d00443262f89d44b903443093847185f995030fb455cee3579caa76df3
+SHA inode 105: def8e216c9a86a9a22c13bc30ca15c12e9f39291353c55a4382bc77d0c15337e
+SHA inode 106: b9ec6c2d52cc3ebb3979d211606c480280f264b4b28a9d829db4108583df428f
+SHA inode 107: c70bff31ac97243fbe282f4d6ffdd82ef4f10e68d6af7c79c0cb3d8d68b67d0d
+SHA inode 108: f9afe5cb81f4f3ceffc3086140f8afc8e17efe18021f1e9377b77b00b38584b3
+SHA inode 109: 02258a4857fe43d26419103a25f708013464e133c2b32508dcc4c3386ea106b0
+SHA inode 110: a69f92a282a852cd5c2607d39fa6193441745e470edcb3ec07ca3a8dbccadc52
+SHA inode 111: 94b68c2666d838b0ba1e664066c8c13233d064ce6106b8fc2f237c80351e62e2
+SHA inode 112: d1349c78bdb38b7a4c29d2be143ffad0f8800bd95c4c310c2f01672e56092baf
+SHA inode 113: no SHA for directories.
+SHA inode 114: 15742fb6a186d397e5ce61a5dee53744cf8910738a3ae7c32fde6bf89cea797b
+SHA inode 115: f74be6d420ee9342dc4c434db72c9a853266f5b3cc56bd2d3dbb87abc4df4258
+SHA inode 116: no SHA for directories.
+SHA inode 117: no SHA for directories.
+SHA inode 118: bdc3e86a1650f6c9135fd69fc2e20caf57ca9571eead5b004ed1e09739ecf309
+SHA inode 119: e33b40001bbaeeebaa8e2928817e1924af50f76ac621ed178667c6ccbbe4deb7
+SHA inode 120: d71f7cfe3f47259c91582b96b32665982ee086fbb0c1b8cd284cf2a8ba35f79b
+SHA inode 121: 2e7a9f04a275bf00beea283f43c10e4d68f75aee19586abeceba3255ad11003c
+SHA inode 122: cc3682b68872b8288cc8546b8f76a72476aab5e1ba6986156f2c962205b3e8de
+SHA inode 123: 9084a10d250c3d342fc82102200913ab4575b34eac298f0d67a711216ecdad08
+SHA inode 124: 3d108d3b10fe97044a4c01faf0d569c622dc919b1bfed9c3c2da96b315041bb6
+SHA inode 125: feb55be1c6eeb2fcc0756d5d591f9cc0f045a736d66820f544ca23338a31a2ef
+SHA inode 126: 062001acf3fbc84c9d6a1ee0439c3542c4d6a6e44143e6e87ff454513b1c67b4
+SHA inode 127: 18582b6ac1d37976f2b2ef059dfcf52a500494b0a4f574e3504d26bcf00f837a
+SHA inode 128: 9d067d74963d1e47740e4019f18850fa76b39de922799f2f00461333d2df594a
+SHA inode 129: 291ed38146a729000b3eb2530f121e4d8cecc9a129c94df067bf293f1c6a2881
+SHA inode 130: 1ef035ec256e23d38bbf76c6475f11ac1453f61b2665e5407f0feff204e4c968
+SHA inode 131: no SHA for directories.
+SHA inode 132: no SHA for directories.
+SHA inode 133: 4bf3e719c87280f74a9648ec4bcb5bfe46f0805cfcc4568b8044406e1a6663f7
+SHA inode 134: a3fa517e77f2b2d84fcf3aa7d8a1cc63e25219a1e50bbe01e8e76c6f58a8cee5
+SHA inode 135: f04bfb77955a4eea6d4f46df90f4858a6c8720095da0ef60bd7d834e4f404fc7
+SHA inode 136: 40728668a05afd28495ce988ae01e1a5cf9fe8e871a4c8fa8ff9bc605974a2a9
+SHA inode 137: 657c4118f4484bdc212cceaf391ee62af1adb2ae59f5bcaf3868240530d1373d
+SHA inode 138: no SHA for directories.
+SHA inode 139: 9b80e4e1a0c3bb2239bb221fa2a9452e81f0ab89efd9e0eb4e5b7d7f5ca4400d
+SHA inode 140: no SHA for directories.
+SHA inode 141: 6e4ef21a642d498410d85282085fb953d66ba105866e113a4c7d18c2c4f49ee3
+SHA inode 142: 4803e967dc8fc25ec5d69c7e7f2cb3b1212307939a53244879df7312b9e3ddd7
+SHA inode 143: no SHA for directories.
+SHA inode 144: no SHA for directories.
+SHA inode 145: dfd3ee6b04199430e65ef7ed0655a35d9578a836fb72bb65263f38c38b76d584
+SHA inode 146: 0bd8299f7e4329893d526890e61f40990266a45a1ec5457c180cd3073625f64d
+SHA inode 147: no SHA for directories.
+SHA inode 148: no SHA for directories.
+SHA inode 149: 7ea4d27759600d87003ae6cd23f168b26790462be66d7f408bd97218a443ae1f
+SHA inode 150: no SHA for directories.
+SHA inode 151: 0471b227975f6b6b883385cb8a2b5b706a1866bc7e4ea4c5dd5b25201c772ca9
+SHA inode 152: 5bf049d3fd8a778fedc57a69687fb9a272c1d929fb2fe9f0897d8c6a2af938dc
+SHA inode 153: bb4d3a894e38e34ee1232a2791d3df3c0b0b73ee996c1653948bd3d38e7e82be
+SHA inode 154: 08dea5ba2a1aed499e3e7f83519f6dd478da1f89f7dc0394ed3163f898ff8996
+SHA inode 155: no SHA for directories.
+SHA inode 156: b7b329ce7fcb572f9812841113e9b74c3e1ad5defb22bb8560fdd6a1ca25f42b
+SHA inode 157: a06fd750de7374983daf40016564b1fb6f2168ed2c5742ccf69912e8574803c0
+SHA inode 158: c67c199595622dfbdc9e415c4a0ad6166eb49cbf74c6aac7bb3e958604d5ecb8
+SHA inode 159: ce89dafcd7d38806241bc002787c159a578f50097aa23e9e88e3055997356b0c
+SHA inode 160: 80f4ce388f98343e4ff7be45f94b92a5faa58522d5e8d153bed82d791dda26fb
+SHA inode 161: 0928a1403e47dba45debf87e3eb99378bf764739ffbee45e3d29db5f25559625
+SHA inode 162: 54b00be075c6dde5fbe6bd1256f7fd48cd0b64b6480757ab5eebb4050eb7a6e1
+SHA inode 163: 9b5e972c316ae531c2e640f89a43f38b6553c872940de8775c550356e8be24f8
+SHA inode 164: 852bc7ff26fea1fe2e44f765df7ca6e1170139ed0b219ce843f1e60ed94ed89c
+SHA inode 165: no SHA for directories.
+SHA inode 166: 07a09f0d289dc5ed9d4cecd8ae73a1005b24864722066997d6d044338d4fd0e4

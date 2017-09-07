@@ -1,0 +1,6 @@
+test-cat1-first: fail
+test-cat1-simple: fail
+test-cat2-first: fail
+test-lsall-first: fail
+test-lsall-simple: fail
+week 08: 0/5

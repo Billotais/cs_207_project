@@ -1,0 +1,17 @@
+Submission accepted
+
+stdout:
+=====
+cc -std=c99 -Wall -pedantic  -g   -c -o shell.o shell.c
+cc -std=c99 -Wall -pedantic  -g   -c -o inode.o inode.c
+cc -std=c99 -Wall -pedantic  -g   -c -o sector.o sector.c
+cc -std=c99 -Wall -pedantic  -g   -c -o direntv6.o direntv6.c
+cc -std=c99 -Wall -pedantic  -g   -c -o mount.o mount.c
+cc -std=c99 -Wall -pedantic  -g   -c -o filev6.o filev6.c
+cc -std=c99 -Wall -pedantic  -g   -c -o error.o error.c
+cc -std=c99 -Wall -pedantic  -g   -c -o sha.o sha.c
+cc   shell.o inode.o sector.o direntv6.o mount.o filev6.o error.o sha.o  -lcrypto -o shell
+Submission accepted
+
+-----
+stderr:

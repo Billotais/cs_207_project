@@ -1,0 +1,37 @@
+STDOUT
+**********FS SUPERBLOCK START**********
+s_isize             : 64  
+s_fsize             : 4096
+s_fbmsize           : 0   
+s_ibmsize           : 0   
+s_inode_start       : 2   
+s_block_start       : 66  
+s_fbm_start         : 0   
+s_ibm_start         : 0   
+s_flock             : 0   
+s_ilock             : 0   
+s_fmod              : 0   
+s_ronly             : 0   
+s_time              : [0] 0
+**********FS SUPERBLOCK END**********
+TEST_BEGIN
+inode_read_null_fs: PASS
+inode_read_null_inode: PASS
+inode_read_bad_inr: FAIL
+inode_read_too_high_inr: FAIL
+inode_findsector_null_fs: PASS
+inode_findsector_null_inode: PASS
+filev6_open_null_filesystem: PASS
+filev6_open_null_file: PASS
+filev6_matching_internal_inode_copy: PASS
+filev6_matching_non_inode_fields: PASS
+filev6_readblock_null_filev6: PASS
+filev6_readblock_file_done: PASS
+filev6_readblock_read_full_file: PASS
+inode_findsector_unallocated_inode: PASS
+inode_findsector_small_over_offset: FAIL
+inode_findsector_large_over_offset: FAIL
+TEST_END
+
+-----------
+STDERR

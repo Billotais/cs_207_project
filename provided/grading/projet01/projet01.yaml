@@ -1,0 +1,47 @@
+- id: infected-wire
+- nb tests passes: 28
+- Makefile:   2                          # max 3
+- unixv6fs.h, struct inode:    2.25         # max 2.25
+- direntv6.h, struct directory_reader: 1 # max 1
+- sector.c (sector_read):     2.5          # max 2.5
+- mount.c:
+    - mountv6:  3                  # max 5
+    - mountv6_print_superblock: 2.5  # max 2.5
+    - umountv6:  2                 # max 2.5
+- inode.c:
+    - inode_scan_print: 4  # max 5
+    - inode_print: 2.5       # max 2.5
+    - inode_read:  4       # max 5
+    - inode_findsector:  8 # max 10
+- filev6.c:
+    - filev6_open:    2.5       # max 2.5
+    - filev6_readblock: 5     # max 5
+- sha.c:
+    - sha_to_string:   2.5         # max 2.5
+    - print_sha_from_content:  2.5 # max 2.5
+    - print_sha_inode:  4        # max 5
+- direntv6.c:
+    - direntv6_opendir:  2    # max 2.5
+    - direntv6_readdir:  5    # max 5
+    - direntv6_print_tree: 5  # max 5
+    - dirlookup:   10          # max 10
+- shell.c:
+    - structs/types (hors erreurs): 6    # max 6
+    - tokenisation:   5                  # max 5
+    - gestion générique des commandes: 5 # max 5
+    - commande help:  2.5                  # max 2.5
+    - commande exit/quit: 2              # max 2.5
+    - commande mount: 2                  # max 2
+    - commande lsall: 2.5                  # max 2.5
+    - commande cat: 5                    # max 5
+    - commande istat:  2.5                 # max 2.5
+    - commande inode:   2.5                # max 2.5
+    - commande sha:  2                   # max 2.5
+    - commande psb: 2.5                    # max 2.5
+    - mécanisme degestion des erreurs: 2.5 # max 2.5
+    - main():  5                         # max 5
+- test-dirent.c: 2.5  # max 2.5
+- test-file.c:  5   # max 5
+- test-inodes.c: 2.5  # max 2.5
+- style: 2       # max 2
+- bonus/malus: -2.5 # max 5, min -5

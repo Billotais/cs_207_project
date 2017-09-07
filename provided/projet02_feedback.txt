@@ -1,0 +1,61 @@
+Submission accepted
+
+stdout:
+=====
+Attempting to make target shell
+cc -std=c99 -Wall -pedantic  -g   -c -o test-inodes.o test-inodes.c
+cc -std=c99 -Wall -pedantic  -g   -c -o test-core.o test-core.c
+cc -std=c99 -Wall -pedantic  -g   -c -o error.o error.c
+cc -std=c99 -Wall -pedantic  -g   -c -o mount.o mount.c
+cc -std=c99 -Wall -pedantic  -g   -c -o inode.o inode.c
+cc -std=c99 -Wall -pedantic  -g   -c -o sector.o sector.c
+cc -std=c99 -Wall -pedantic  -g   -c -o filev6.o filev6.c
+cc -std=c99 -Wall -pedantic  -g   -c -o bmblock.o bmblock.c
+cc   test-inodes.o test-core.o error.o mount.o inode.o sector.o filev6.o bmblock.o  -lcrypto -o test-inodes
+cc -std=c99 -Wall -pedantic  -g   -c -o test-inode-read.o test-inode-read.c
+cc   test-inode-read.o test-core.o error.o mount.o inode.o sector.o filev6.o bmblock.o  -lcrypto -o test-inode-read
+cc -std=c99 -Wall -pedantic  -g   -c -o test-file.o test-file.c
+cc -std=c99 -Wall -pedantic  -g   -c -o sha.o sha.c
+cc   test-file.o test-core.o error.o mount.o inode.o filev6.o sha.o sector.o bmblock.o  -lcrypto -o test-file
+cc -std=c99 -Wall -pedantic  -g   -c -o test-dirent.o test-dirent.c
+cc -std=c99 -Wall -pedantic  -g   -c -o direntv6.o direntv6.c
+cc   test-dirent.o test-core.o error.o mount.o inode.o filev6.o direntv6.o sector.o bmblock.o  -lcrypto -o test-dirent
+cc -std=c99 -Wall -pedantic  -g   -c -o shell.o shell.c
+cc   shell.o inode.o sector.o direntv6.o mount.o filev6.o error.o sha.o bmblock.o  -lcrypto -o shell
+cc -std=c99 -Wall -pedantic  -g   -c -D_DEFAULT_SOURCE $(pkg-config fuse --cflags) -o fs.o -c fs.c
+cc -std=c99 -Wall -pedantic  -g    -o fs fs.o inode.o sector.o direntv6.o mount.o filev6.o error.o sha.o bmblock.o -lcrypto $(pkg-config fuse --libs)
+cc -std=c99 -Wall -pedantic  -g   -c -o test-bmblock.o test-bmblock.c
+cc   test-bmblock.o error.o bmblock.o mount.o inode.o filev6.o direntv6.o sector.o  -lcrypto -o test-bmblock
+rm -f *.o
+Made target shell successfully
+=====
+Attempting to make target fs
+cc -std=c99 -Wall -pedantic  -g   -c -o test-inodes.o test-inodes.c
+cc -std=c99 -Wall -pedantic  -g   -c -o test-core.o test-core.c
+cc -std=c99 -Wall -pedantic  -g   -c -o error.o error.c
+cc -std=c99 -Wall -pedantic  -g   -c -o mount.o mount.c
+cc -std=c99 -Wall -pedantic  -g   -c -o inode.o inode.c
+cc -std=c99 -Wall -pedantic  -g   -c -o sector.o sector.c
+cc -std=c99 -Wall -pedantic  -g   -c -o filev6.o filev6.c
+cc -std=c99 -Wall -pedantic  -g   -c -o bmblock.o bmblock.c
+cc   test-inodes.o test-core.o error.o mount.o inode.o sector.o filev6.o bmblock.o  -lcrypto -o test-inodes
+cc -std=c99 -Wall -pedantic  -g   -c -o test-inode-read.o test-inode-read.c
+cc   test-inode-read.o test-core.o error.o mount.o inode.o sector.o filev6.o bmblock.o  -lcrypto -o test-inode-read
+cc -std=c99 -Wall -pedantic  -g   -c -o test-file.o test-file.c
+cc -std=c99 -Wall -pedantic  -g   -c -o sha.o sha.c
+cc   test-file.o test-core.o error.o mount.o inode.o filev6.o sha.o sector.o bmblock.o  -lcrypto -o test-file
+cc -std=c99 -Wall -pedantic  -g   -c -o test-dirent.o test-dirent.c
+cc -std=c99 -Wall -pedantic  -g   -c -o direntv6.o direntv6.c
+cc   test-dirent.o test-core.o error.o mount.o inode.o filev6.o direntv6.o sector.o bmblock.o  -lcrypto -o test-dirent
+cc -std=c99 -Wall -pedantic  -g   -c -o shell.o shell.c
+cc   shell.o inode.o sector.o direntv6.o mount.o filev6.o error.o sha.o bmblock.o  -lcrypto -o shell
+cc -std=c99 -Wall -pedantic  -g   -c -D_DEFAULT_SOURCE $(pkg-config fuse --cflags) -o fs.o -c fs.c
+cc -std=c99 -Wall -pedantic  -g    -o fs fs.o inode.o sector.o direntv6.o mount.o filev6.o error.o sha.o bmblock.o -lcrypto $(pkg-config fuse --libs)
+cc -std=c99 -Wall -pedantic  -g   -c -o test-bmblock.o test-bmblock.c
+cc   test-bmblock.o error.o bmblock.o mount.o inode.o filev6.o direntv6.o sector.o  -lcrypto -o test-bmblock
+rm -f *.o
+Made target fs successfully
+Submission accepted
+
+-----
+stderr:

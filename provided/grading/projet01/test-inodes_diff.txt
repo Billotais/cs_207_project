@@ -1,0 +1,75 @@
+STDOUT
+  **********FS SUPERBLOCK START**********
+  s_isize             : 64  
+  s_fsize             : 4096
+  s_fbmsize           : 0   
+  s_ibmsize           : 0   
+  s_inode_start       : 2   
+  s_block_start       : 66  
+  s_fbm_start         : 0   
+  s_ibm_start         : 0   
+  s_flock             : 0   
+  s_ilock             : 0   
+  s_fmod              : 0   
+  s_ronly             : 0   
+  s_time              : [0] 0
+  **********FS SUPERBLOCK END**********
+  inode   1 (DIR) len   16
+  inode   2 (DIR) len   16
+  inode   3 (DIR) len   32
+  inode   4 (DIR) len   240
+  inode   5 (FIL) len   17385
+  inode   6 (FIL) len   631
+  inode   7 (FIL) len   11761
+  inode   8 (FIL) len   11332
+  inode   9 (FIL) len   9938
+  inode   10 (FIL) len   14282
+  inode   11 (FIL) len   12527
+  inode   12 (FIL) len   14411
+  inode   13 (FIL) len   13459
+  inode   14 (FIL) len   14145
+  inode   15 (FIL) len   13339
+  inode   16 (FIL) len   12147
+  inode   17 (FIL) len   10871
+  inode   18 (FIL) len   12149
+  inode   19 (FIL) len   1428
+  inode   20 (DIR) len   16
+  inode   21 (FIL) len   169856
+  TESTS_BEGINNING
+  isize: 64
+  fsize: 4096
+  fbmsize: 0
+  ibmsize: 0
+  inode_start: 2
+  block_start: 66
+  fbm_start: 0
+  ibm_start: 0
+  TEST_BEGIN
+  sector_read_null_file_ptr: PASS
+  sector_read_null_data_ptr: PASS
+  successful_read: PASS
+  overseek: PASS
+  fbm_null: PASS
+  ibm_null: PASS
+  non_null_file: PASS
+  TEST_END
+  MOUNT_TEST_BEGIN
+  **********FS SUPERBLOCK START**********
+  s_isize             : 64  
+  s_fsize             : 4096
+  s_fbmsize           : 0   
+  s_ibmsize           : 0   
+  s_inode_start       : 2   
+  s_block_start       : 66  
+  s_fbm_start         : 0   
+  s_ibm_start         : 0   
+  s_flock             : 0   
+  s_ilock             : 0   
+  s_fmod              : 0   
+  s_ronly             : 0   
+  s_time              : [0] 0
+  **********FS SUPERBLOCK END**********
+  MOUNT_TEST_END
+  TESTS_END
+
+STDERR

@@ -1,0 +1,10 @@
+Submission Failed
+
+preflight check script submit.sh returned error code 130
+stdout: make: Nothing to be done for 'all'.
+making (our) test-inodes: done.
+making (our) test-file: done.
+=====
+testing our test-inodes on disk simple.uv6: 
+---
+stderr: 
